@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Lukas Cerny">
+
+    <!-- Disable favicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+
+    <!-- Libraries (JS & CSS) -->
+    <script type="text/javascript" src="/libraries/sha256.js"></script>
+
+    <script type="text/javascript" src="/libraries/jquery/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="/libraries/jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/libraries/jquery/jquery-ui-1.12.1/jquery-ui.css">
+    <script type="text/javascript" src="/libraries/jquery/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="/libraries/jsgrid/jsgrid.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/libraries/jsgrid/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="/libraries/jsgrid/jsgrid-theme.min.css" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="/js/userAdministration.js"></script>
+
+    <style>
+        .jsgrid-grid-body {
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+<div id="loginContent">
+    <input type="text" id="inputUsermane" placeholder="Username"><br />
+    <input type="password" id="inputPassword" placeholder="Password"><br />
+    <button id="btnLogin" onclick="login()"> Sign in </button>
+</div>
+
+<div id="userAdministrationContent">
+    <div id="user_table"></div>
+    <div id="permission_model_dialog" title="Permissions for model">
+        <table id="models_dialog">
+            <col width="50%">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Permissions</th>
+            </tr>
+            </thead>
+            <tfoot></tfoot>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

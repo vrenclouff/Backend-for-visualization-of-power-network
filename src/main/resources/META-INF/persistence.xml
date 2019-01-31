@@ -1,0 +1,38 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="ModelsDataSource" transaction-type="JTA">
+        <description>Data source for models</description>
+        <jta-data-source>ModelsDS</jta-data-source>
+
+
+        <!-- Defines classes that will be saved to database -->
+        <class>cz.zcu.kiv.vps.model.domain.Model</class>
+        <class>cz.zcu.kiv.vps.model.domain.DummyUser</class>
+
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="UsersDataSource" transaction-type="JTA">
+        <description>Data source for users</description>
+        <jta-data-source>UsersDS</jta-data-source>
+
+        <!-- Defines classes that will be saved to database -->
+        <class>cz.zcu.kiv.vps.idm.model.User</class>
+        <class>cz.zcu.kiv.vps.idm.model.GraphModel</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+        </properties>
+    </persistence-unit>
+</persistence>
